@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BalanceController@index');
+
+Route::get('/balances', 'BalanceController@index');
+Route::get('/balances/transfer', 'BalanceController@transferForm');
+Route::post('/balances/transfer', 'BalanceController@makeTransfer');
